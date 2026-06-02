@@ -26,7 +26,7 @@ public class CombatManager {
                     + "  Mana: " + jatekos.getMana() + "/" + jatekos.getMaxMana()
                     + "  Gyógyital: " + jatekos.getGyogyital());
             System.out.println(ellenfel.getNev() + " életerő: " + ellenfel.getEletero());
-            System.out.println("Mit teszel? (1) támadás  (2) varázslat  (3) gyógyital");
+            System.out.println("Mit teszel? (1) támadás  (2) varázslat  (3) gyógyital (4) menekülés");
 
             String valasz = scanner.nextLine().trim();
 
@@ -56,10 +56,16 @@ public class CombatManager {
                     System.out.println("Nincs több gyógyitalod!");
                     continue;
                 }
+            } else if (valasz.equals("4")) {
+                if (rand.nextInt(100) < 40) {
+                    System.out.println("Sikeresen elmenekültél a harcból!");
+                    return false; 
+                } else {
+                    System.out.println("Nem sikerült elmenekülnöd, az ellenfél utadat állja!");
+                }
             } else {
-                System.out.println("Érvénytelen parancs. Írj 1-est, 2-est vagy 3-ast.");
+                System.out.println("Érvénytelen parancs. Írj 1, 2, 3 vagy 4-et.");
                 continue;
-            }
 
             if (!ellenfel.elHarcban()) {
                 System.out.println("\nLegyőzted: " + ellenfel.getNev() + "!");
