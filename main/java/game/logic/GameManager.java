@@ -100,6 +100,9 @@ public class GameManager {
                 saveManager.torolMentest();
             } else {
                 celSzoba.setVanEllenfel(false);
+
+                System.out.println("[Auto-Save] Játékállás automatikusan elmentve.");
+                ment();
             }
         }
 
