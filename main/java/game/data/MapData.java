@@ -10,7 +10,7 @@ public class MapData {
     public static Map<String, Room> buildMap() {
         Map<String, Room> terkep = new HashMap<>();
 
-        Room bejaratiCsarnok = new Room("bejarati_csarnok",
+        Room bejaratiCsarnok = new Room("bejárati_csarnok",
                 "Egy sötét kőcsarnokban vagy. A falakon fáklyák égnek. Innen indul a kalandod.",
                 false, false);
         bejaratiCsarnok.addKijarat("north", "folyosó");
