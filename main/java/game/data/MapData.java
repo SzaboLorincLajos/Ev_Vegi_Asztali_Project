@@ -34,15 +34,22 @@ public class MapData {
         torony.addKijarat("south", "folyosó");
 
         Room titkos_kamra = new Room("titkos_kamra",
-                "Egy rejtett kamra. Úgy tűnik kevesen jártak itt. (max egy miskolci csöves) ",
+                "Egy rejtett kamra. Úgy tűnik kevesen jártak itt. (max egy miskolci csöves) Innen egy titkos ajtó vezet északra.",
                 true, true);
         titkos_kamra.addKijarat("south", "fegyvertározó");
+        titkos_kamra.addKijarat("north", "sarkany_feszke");
+
+        Room sarkanyFeszke = new Room("sarkany_feszke",
+                "A sárkány fészke. Hatalmas csontok borítják a padlót, a levegőben kénszag tereng.",
+                true, true); 
+        sarkanyFeszke.addKijarat("south", "titkos_kamra"); 
 
         terkep.put(bejaratiCsarnok.getId(), bejaratiCsarnok);
         terkep.put(folyoso.getId(), folyoso);
         terkep.put(fegyvertarozo.getId(), fegyvertarozo);
         terkep.put(torony.getId(), torony);
         terkep.put(titkos_kamra.getId(), titkos_kamra);
+        terkep.put(sarkanyFeszke.getId(), sarkanyFeszke);
 
         return terkep;
     }
