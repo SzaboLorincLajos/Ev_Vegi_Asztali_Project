@@ -89,7 +89,8 @@ public class GameUI {
                 break;
             }
 
-            System.out.print("\n> ");
+            System.out.println("\n==================================================");
+            System.out.print("> ");
             String parancs = scanner.nextLine().trim();
 
             if (parancs.isEmpty()) {
