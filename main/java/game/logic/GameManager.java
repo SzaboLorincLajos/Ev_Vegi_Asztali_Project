@@ -27,7 +27,7 @@ public class GameManager {
 
     public void ujJatek(String nev, String kaszt) {
         Character karakter = new Character(nev, kaszt);
-        this.allapot = new GameState(karakter, "bejarati_csarnok");
+        this.allapot = new GameState(karakter, "bejárati_csarnok");
     }
 
     public boolean betoltJatek() {
@@ -46,7 +46,7 @@ public class GameManager {
     public void ment() {
         boolean ok = saveManager.ment(allapot);
         if (ok) {
-            System.out.println("Jatek mentve.");
+            System.out.println("Játék mentve.");
         }
     }
 
@@ -54,7 +54,7 @@ public class GameManager {
         String[] reszek = parancs.trim().toLowerCase().split(" ");
 
         if (reszek.length == 0 || parancs.isEmpty()) {
-            System.out.println("Nem adtal meg parancsot.");
+            System.out.println("Nem adtál meg parancsot.");
             return;
         }
 
@@ -73,7 +73,7 @@ public class GameManager {
         } else if (akcio.equals("help")) {
             segitseg();
         } else {
-            System.out.println("Ismeretlen parancs. Ird: help");
+            System.out.println("Ismeretlen parancs. Írd: help");
         }
     }
 
@@ -88,11 +88,11 @@ public class GameManager {
 
         allapot.setJelenlegiSzobaId(celSzobaId);
         Room celSzoba = terkep.get(celSzobaId);
-        System.out.println("\nAtmegyek: " + celSzoba.getId().replace("_", " "));
+        System.out.println("\nÁtmegyek: " + celSzoba.getId().replace("_", " "));
         System.out.println(celSzoba.getLeiras());
 
         if (celSzoba.isVanEllenfel()) {
-            System.out.println("\nEllenfel van a szobaban!");
+            System.out.println("\nEllenfél van a szobában!");
             Enemy ellenfel = new Enemy();
             boolean gyozelem = combatManager.harc(allapot.getKarakter(), ellenfel);
             if (!gyozelem) {
@@ -110,20 +110,20 @@ public class GameManager {
         Room jelenlegiSzoba = terkep.get(allapot.getJelenlegiSzobaId());
 
         if (!jelenlegiSzoba.isVanLada()) {
-            System.out.println("Nincs lada ebben a szobaban.");
+            System.out.println("Nincs láda ebben a szobában.");
             return;
         }
 
         if (jelenlegiSzoba.isLadaNyitva()) {
-            System.out.println("A lada mar nyitva van, es ures.");
+            System.out.println("A láda már nyitva van, és üres.");
             return;
         }
 
         jelenlegiSzoba.setLadaNyitva(true);
         int talalt = (int) (Math.random() * 3) + 1;
         allapot.getKarakter().setGyogyital(allapot.getKarakter().getGyogyital() + talalt);
-        System.out.println("Kinyitod a ladat! Talalsz benne " + talalt + " gyogyitalt.");
-        System.out.println("Gyogyitalok szama: " + allapot.getKarakter().getGyogyital());
+        System.out.println("Kinyitod a ládat! Találsz benne " + talalt + " gyógyitalt.");
+        System.out.println("Gyógyitalok száma: " + allapot.getKarakter().getGyogyital());
     }
 
     private void szobaNezese() {
@@ -131,7 +131,7 @@ public class GameManager {
         System.out.println("\n" + jelenlegiSzoba.getLeiras());
 
         if (jelenlegiSzoba.isVanLada() && !jelenlegiSzoba.isLadaNyitva()) {
-            System.out.println("Latszik egy lada a szobaban. (open chest)");
+            System.out.println("Látszik egy láda a szobában. (open chest)");
         }
 
         kijaratok(jelenlegiSzoba);
@@ -139,7 +139,7 @@ public class GameManager {
 
     private void kijaratok(Room szoba) {
         if (!szoba.getKijaratok().isEmpty()) {
-            System.out.print("Kijaratok: ");
+            System.out.print("Kijáratok: ");
             System.out.println(String.join(", ", szoba.getKijaratok().keySet()));
         }
     }
@@ -147,21 +147,21 @@ public class GameManager {
     private void karakterStatusz() {
         Character k = allapot.getKarakter();
         System.out.println("\n-- " + k.getName() + " (" + k.getKaszt() + ") --");
-        System.out.println("Eletero: " + k.getEletero() + "/" + k.getMaxEletero());
+        System.out.println("Életerő: " + k.getEletero() + "/" + k.getMaxEletero());
         System.out.println("Mana:    " + k.getMana() + "/" + k.getMaxMana());
-        System.out.println("Sebzes:  " + k.getSebzes());
-        System.out.println("Gyogyital: " + k.getGyogyital());
+        System.out.println("Sebzés:  " + k.getSebzes());
+        System.out.println("Gyógyital: " + k.getGyogyital());
     }
 
     private void segitseg() {
-        System.out.println("\nErheto parancsok:");
-        System.out.println("  go north/south/east/west  - mozgas");
-        System.out.println("  open chest                - lada kinyitasa");
-        System.out.println("  look                      - szoba megnezese");
+        System.out.println("\nÉrhető parancsok:");
+        System.out.println("  go north/south/east/west  - mozgás");
+        System.out.println("  open chest                - láda kinyitása");
+        System.out.println("  look                      - szoba megnézése");
         System.out.println("  status                    - karakter adatok");
-        System.out.println("  save                      - jatek mentese");
-        System.out.println("  help                      - parancsok listaja");
-        System.out.println("  exit                      - kilepes");
+        System.out.println("  save                      - játék mentése");
+        System.out.println("  help                      - parancsok listája");
+        System.out.println("  exit                      - kilépés");
     }
 
     public void szobaMegjelenites() {
