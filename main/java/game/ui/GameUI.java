@@ -70,7 +70,7 @@ public class GameUI {
             System.out.print("Válassz kasztot (harcos / magus): ");
             kaszt = scanner.nextLine().trim().toLowerCase();
             if (!kaszt.equals("harcos") && !kaszt.equals("mágus")) {
-                System.out.println("Érveénytelen kaszt. Írj: harcos vagy mágus");
+                System.out.println("Érvénytelen kaszt. Írj: harcos vagy mágus");
             }
         }
 

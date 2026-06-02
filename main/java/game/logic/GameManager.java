@@ -51,6 +51,14 @@ public class GameManager {
     }
 
     public void korokFeldolgozasa(String parancs) {
+        if (parancs.equalsIgnoreCase("hesoyam")) {
+            Character k = allapot.getKarakter();
+            k.setEletero(k.getMaxEletero());
+            k.setMana(k.getMaxMana());
+            System.out.println("[CHEAT] Életerő és mana teljesen feltöltve!");
+            return;
+        }
+
         String[] reszek = parancs.trim().toLowerCase().split(" ");
 
         if (reszek.length == 0 || parancs.isEmpty()) {
