@@ -103,6 +103,15 @@ public class GameManager {
 
                 System.out.println("[Auto-Save] Játékállás automatikusan elmentve.");
                 ment();
+
+                game.model.Character k = allapot.getKarakter();
+                k.setMaxEletero(k.getMaxEletero() + 10);
+                k.setMaxMana(k.getMaxMana() + 5);
+
+                k.setEletero(Math.min(k.getEletero() + 20, k.getMaxEletero()));
+                k.setMana(Math.min(k.getMana() + 10, k.getMaxMana()));
+
+                System.out.println("A harci tapasztalattól erősebb lettél! Max HP +10, Max Mana +5! (Valamennyit gyógyultál is.)");
             }
         }
 
