@@ -21,7 +21,7 @@ public class CombatManager {
         System.out.println(ellenfel.getNev() + " életerő: " + ellenfel.getEletero());
 
         while (jatekos.elHarcban() && ellenfel.elHarcban()) {
-            System.out.println("\n-- A te korod --");
+            System.out.println("\n-- Életkorod --");
             System.out.println("Életero: " + jatekos.getEletero() + "/" + jatekos.getMaxEletero()
                     + "  Mana: " + jatekos.getMana() + "/" + jatekos.getMaxMana()
                     + "  Gyógyital: " + jatekos.getGyogyital());
@@ -46,11 +46,11 @@ public class CombatManager {
                 if (siker) {
                     System.out.println("Gyógyitalt használtál. Életerő: " + jatekos.getEletero());
                 } else {
-                    System.out.println("Nincs többé gyógyitalod!");
+                    System.out.println("Nincs több gyógyitalod!");
                     continue;
                 }
             } else {
-                System.out.println("Érvénytelen parancs. Írj 1, 2 vagy 3-at.");
+                System.out.println("Érvénytelen parancs. Írj 1-est, 2-est vagy 3-ast.");
                 continue;
             }
 
@@ -63,10 +63,10 @@ public class CombatManager {
             int tenylegesSebzes = ellenfelSebzes - rand.nextInt(4);
             if (tenylegesSebzes < 1) tenylegesSebzes = 1;
             jatekos.sebzodes(tenylegesSebzes);
-            System.out.println(ellenfel.getNev() + " támad! Kapsz " + tenylegesSebzes + " sebzést.");
+            System.out.println(ellenfel.getNev() + " támad! Kaptál " + tenylegesSebzes + " sebzést.");
 
             if (!jatekos.elHarcban()) {
-                System.out.println("\nMeghaltál a harcban...");
+                System.out.println("\nMeghaltál a harcban... :(");
                 return false;
             }
         }
