@@ -16,8 +16,8 @@ public class Character {
 
         if (kaszt.equals("harcos")) {
             this.maxEletero = 120;
-            this.maxMana = 20;
-            this.sebzes = 18;
+            this.maxMana = 25;
+            this.sebzes = 20;
         } else {
             this.maxEletero = 80;
             this.maxMana = 100;
