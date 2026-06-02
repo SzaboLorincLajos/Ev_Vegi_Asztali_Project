@@ -31,8 +31,15 @@ public class CombatManager {
             String valasz = scanner.nextLine().trim();
 
             if (valasz.equals("1")) {
-                jatekos.tamad(ellenfel);
-                System.out.println("Támadsz! Sebzés: " + jatekos.getSebzes());
+                int alapSebzes = jatekos.getSebzes();
+                if (rand.nextInt(100) < 20) { // 20% kritikus találat
+                    int kritikusSebzes = alapSebzes * 2;
+                    ellenfel.sebzodes(kritikusSebzes);
+                    System.out.println("Kritikus találat! Dupla sebzést vittél be: " + kritikusSebzes);
+                } else {
+                    ellenfel.sebzodes(alapSebzes);
+                    System.out.println("Megtámadtad az ellenfelet! Sebzés: " + alapSebzes);
+                }
             } else if (valasz.equals("2")) {
                 boolean siker = jatekos.varazslat(ellenfel);
                 if (siker) {
