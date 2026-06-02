@@ -25,7 +25,7 @@ public class SaveManager {
             writer.close();
             return true;
         } catch (IOException e) {
-            System.out.println("Hiba mentés közben: " + e.getMessage());
+            System.out.println("Hiba a mentés közben: " + e.getMessage());
             return false;
         }
     }
@@ -41,7 +41,7 @@ public class SaveManager {
             reader.close();
             return allapot;
         } catch (IOException e) {
-            System.out.println("Hiba betöltés közben: " + e.getMessage());
+            System.out.println("Hiba a betöltés közben: " + e.getMessage());
             return null;
         }
     }
