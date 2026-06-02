@@ -124,8 +124,18 @@ public class GameManager {
         allapot.getKarakter().setGyogyital(allapot.getKarakter().getGyogyital() + talalt);
         System.out.println("Kinyitod a ládat! Találsz benne " + talalt + " gyógyitalt.");
         System.out.println("Gyógyitalok száma: " + allapot.getKarakter().getGyogyital());
-    }
 
+        if (Math.random() < 0.33) {
+            game.model.Character k = allapot.getKarakter();
+            if (k.getKaszt().equals("harcos")) {
+                k.setSebzes(k.getSebzes() + 2);
+                System.out.println("A láda alján találsz egy élesebb kardot is! A sebzésed megnőtt 2-vel! Új sebzés: " + k.getSebzes());
+            } else {
+                k.setMana(Math.min(k.getMana() + 15, k.getMaxMana()));
+                System.out.println("Egy ősi rúnakő volt a ládában! Visszatöltődött 15 manád! Jelenlegi mana: " + k.getMana());
+            }
+        }
+    }
     private void szobaNezese() {
         Room jelenlegiSzoba = terkep.get(allapot.getJelenlegiSzobaId());
         System.out.println("\n" + jelenlegiSzoba.getLeiras());
