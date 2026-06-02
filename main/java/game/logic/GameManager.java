@@ -131,7 +131,7 @@ public class GameManager {
         System.out.println("\n" + jelenlegiSzoba.getLeiras());
 
         if (jelenlegiSzoba.isVanLada() && !jelenlegiSzoba.isLadaNyitva()) {
-            System.out.println("Látszik egy láda a szobában. (open chest)");
+            System.out.println("Látszik egy láda a szoba sarkában. (open chest)");
         }
 
         kijaratok(jelenlegiSzoba);
