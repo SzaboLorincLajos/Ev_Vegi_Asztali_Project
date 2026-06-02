@@ -13,30 +13,30 @@ public class MapData {
         Room bejaratiCsarnok = new Room("bejarati_csarnok",
                 "Egy sötét kőcsarnokban vagy. A falakon fáklyák égnek. Innen indul a kalandod.",
                 false, false);
-        bejaratiCsarnok.addKijarat("north", "folyoso");
-        bejaratiCsarnok.addKijarat("east", "fegyvertarozo");
+        bejaratiCsarnok.addKijarat("north", "folyosó");
+        bejaratiCsarnok.addKijarat("east", "fegyvertározó");
 
-        Room folyoso = new Room("folyoso",
+        Room folyoso = new Room("folyosó",
                 "Egy hosszú folyosón állsz. A levegő nyirkos és hideg.",
                 true, true);
-        folyoso.addKijarat("south", "bejarati_csarnok");
+        folyoso.addKijarat("south", "bejárati_csarnok");
         folyoso.addKijarat("north", "torony");
 
-        Room fegyvertarozo = new Room("fegyvertarozo",
+        Room fegyvertarozo = new Room("fegyvertározó",
                 "Egy régi fegyvertároló szoba. A falakról rozsdás kardok lógnak.",
                 true, false);
-        fegyvertarozo.addKijarat("west", "bejarati_csarnok");
+        fegyvertarozo.addKijarat("west", "bejárati_csarnok");
         fegyvertarozo.addKijarat("north", "titkos_kamra");
 
         Room torony = new Room("torony",
                 "A vár tornyának tetején vagy. Innen belátni az egész vidéket.",
                 false, true);
-        torony.addKijarat("south", "folyoso");
+        torony.addKijarat("south", "folyosó");
 
         Room titkos_kamra = new Room("titkos_kamra",
-                "Egy rejtett kamra. Úgy tűnik kevesen jártak itt.",
+                "Egy rejtett kamra. Úgy tűnik kevesen jártak itt. ",
                 true, true);
-        titkos_kamra.addKijarat("south", "fegyvertarozo");
+        titkos_kamra.addKijarat("south", "fegyvertározó");
 
         terkep.put(bejaratiCsarnok.getId(), bejaratiCsarnok);
         terkep.put(folyoso.getId(), folyoso);
