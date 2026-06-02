@@ -7,7 +7,7 @@ public class Enemy {
     private int eletero;
     private int sebzes;
 
-    private static final String[] NEVEK = {"Goblin", "Troll", "Csontváz", "Sárkány", "Pók"};
+    private static final String[] NEVEK = {"Goblin", "Troll", "Csontváz", "Sárkány", "Pók", "Veszett farkas", "Zombi", "Démon", "Óriás", "Boszorkány", "Vampír", "Kísértet", "Gonosz varázsló", "Sötét lovag", "Kobold", "Óriás kígyó", "Lángoló szellem", "Fagyos óriás", "Mocsári szörny", "Vérfarkas"};
 
     public Enemy() {
         Random rand = new Random();
