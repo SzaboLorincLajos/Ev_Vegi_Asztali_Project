@@ -8,7 +8,7 @@ import java.util.Map;
 public class MapData {
 
     public static Map<String, Room> buildMap() {
-        Map<String, Room> terkep = new HashMap<>();adbawhdoiwahdihawodh
+        Map<String, Room> terkep = new HashMap<>();
 
         Room bejaratiCsarnok = new Room("bejárati_csarnok",
                 "Egy sötét kőcsarnokban vagy. A falakon fáklyák égnek. Innen indul a kalandod, találd meg az összes ládát és élj túl!",
